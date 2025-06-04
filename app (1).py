@@ -19,7 +19,8 @@ import matplotlib.pyplot as plt
 
 @st.cache_data
 def load_data():
-    books = pd.read_csv("Books (2).csv", on_bad_lines='skip', low_memory=False)
+    import pandas as pd
+    books = pd.read_csv("Books(2).gz", compression='gzip', on_bad_lines='skip', low_memory=False)
     users = pd.read_csv("Users (2).csv", on_bad_lines='skip')
     ratings = pd.read_csv("Ratings (1).csv", on_bad_lines='skip')
 
